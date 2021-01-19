@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "eamodio.gitlens",
+    "dtsvet.vscode-wasm",
+    "gruntfuggly.todo-tree",
+    "maelvalais.autoconf",
+    "bungcip.better-toml",
+    "ms-vscode.cpptools",
+    "streetsidesoftware.code-spell-checker",
+    "ms-azuretools.vscode-docker"
+  ]
+}

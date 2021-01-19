@@ -1,0 +1,23 @@
+{
+  "contractName": "P2Palindrome",
+  "constructorInputs": [],
+  "abi": [
+    {
+      "name": "spend",
+      "covenant": false,
+      "inputs": [
+        {
+          "name": "palindrome",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "bytecode": "OP_DUP OP_REVERSEBYTES OP_EQUAL",
+  "source": "pragma cashscript ^0.4.0;\n\ncontract P2Palindrome() {\n    function spend(string palindrome) {\n        require(palindrome.reverse() == palindrome);\n    }\n}\n",
+  "compiler": {
+    "name": "cashc",
+    "version": "0.4.3"
+  },
+  "updatedAt": "2020-08-07T09:57:02.698Z"
+}

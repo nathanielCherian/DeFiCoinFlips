@@ -1,0 +1,238 @@
+{
+ "address": "1NhH9uJcPgWR6TcYQWCCvGxfuFxnirVjxY",
+ "address_index": 16539044,
+ "background-color": "#FFF",
+ "clone_root": "template-new",
+ "cloned_from": "1HeLLo4uzjaLetFx6NH3PMwFP3qbRbTf3D",
+ "description": "",
+ "files": {
+  "index.html": {
+   "sha512": "6b50386e0a8395b73b3f0aa21527d9b8fb4d8c2798786b6ef43fbf86f1d574f5",
+   "size": 2073
+  },
+  "js/ZeroFrame.js": {
+   "sha512": "76a24d167e8a4c45f7d1b315efe31e4b4ccb19efef011c080994c94045ff4c93",
+   "size": 5088
+  },
+  "static/BCH.jpg": {
+   "sha512": "0ce08013e1f7d99e8d71ff119099eec72df489a83ae7a4d2ca61433e52b690fd",
+   "size": 12754
+  },
+  "static/cashscript/LICENSE": {
+   "sha512": "606633c1a46d8bb1ef7b28ea247c187191764c32d48f4a1d0d1b9c9ea0f07ec0",
+   "size": 1051
+  },
+  "static/cashscript/README.md": {
+   "sha512": "98861962ced5235ce744e64422355a4a7c0c2b2d17dce13f1f014add63e0b7af",
+   "size": 3464
+  },
+  "static/cashscript/package.json": {
+   "sha512": "182342ea4e6048f9b304b0ca12745e149cd7a2030bbca7529611559d6d59cdf6",
+   "size": 1652
+  },
+  "static/cashscript/src/Argument.ts": {
+   "sha512": "6f8dbdf6f6b1271be5affecc32d56e93508a9b84c16144882711777e82cc99ba",
+   "size": 2020
+  },
+  "static/cashscript/src/Contract.ts": {
+   "sha512": "2a05a9106169ae4a3eac03cd9030d1b43fcb0d35d37978a1f6a9ff4bce37d6d5",
+   "size": 3498
+  },
+  "static/cashscript/src/Errors.ts": {
+   "sha512": "01b9633ebc73e1b2d408b994b861db972052a4daf1db384dea8e6c6f271e53ba",
+   "size": 3463
+  },
+  "static/cashscript/src/SignatureTemplate.ts": {
+   "sha512": "30ad49abc0b374e675767c1bf0a499fa23a6eb65df34afd2d168d45c53b3b93c",
+   "size": 1576
+  },
+  "static/cashscript/src/Transaction.ts": {
+   "sha512": "ad883909194609b88125f6b1b834a822ff554c1425389b926f66b6193a925beb",
+   "size": 10244
+  },
+  "static/cashscript/src/constants.ts": {
+   "sha512": "ce2220d3f2ac9478371586812eb6a07d0d1102fee504d27ba4377fb8031f519b",
+   "size": 167
+  },
+  "static/cashscript/src/index.ts": {
+   "sha512": "ccd0e9d5daca858c26459f579283d8ed6901790f4a255f3081be045b5da7940e",
+   "size": 435
+  },
+  "static/cashscript/src/interfaces.ts": {
+   "sha512": "887c7bf9aa39a7af1bf16e870886a125bb8a08843a50209c257aa28b98b1b76a",
+   "size": 1187
+  },
+  "static/cashscript/src/network/BitboxNetworkProvider.ts": {
+   "sha512": "59a9039563ae9f8f103f386ad78fef01b0876729c92c8a91b44691608769e295",
+   "size": 1039
+  },
+  "static/cashscript/src/network/ElectrumNetworkProvider.ts": {
+   "sha512": "babe5d8db065de8438916d8923d51f00ce59cc008301f5f93fb6abde50605e56",
+   "size": 5436
+  },
+  "static/cashscript/src/network/FullStackNetworkProvider.ts": {
+   "sha512": "908907f3860e74a8c528e463cb84a9a309536e76dbdeb54fe1fd0b35dcb81cfe",
+   "size": 1561
+  },
+  "static/cashscript/src/network/NetworkProvider.ts": {
+   "sha512": "a1037497a3a809804b6f0c684ed0823be833306f77a3571db2ca81db5916d92d",
+   "size": 1193
+  },
+  "static/cashscript/src/network/index.ts": {
+   "sha512": "2ea3691b805af3cc1e225696618d135fed5d0c8524cc6d9a2fe23ab322dbf1ba",
+   "size": 302
+  },
+  "static/cashscript/src/util.ts": {
+   "sha512": "cb419a0f3a0c2a08c0fd79f6d4527cc4f82f5779992b2ffb34b4f670d6914c3f",
+   "size": 8662
+  },
+  "static/cashscript/test/Contract.test.ts": {
+   "sha512": "53d7ed03955f9c61102cc13a4cf59d680e27c44e7bb6814c75a7bb438355e606",
+   "size": 6334
+  },
+  "static/cashscript/test/e2e/Announcement.test.ts": {
+   "sha512": "03b22dc71f1dbf46da1851bcfbe667e3442d84a8bd368472c7d535d14d19274c",
+   "size": 2861
+  },
+  "static/cashscript/test/e2e/FullStack.test.ts": {
+   "sha512": "a578978c90d7ca7abfba27f53433dce758a7585d80867a3d52e0d1fc0d10b538",
+   "size": 1754
+  },
+  "static/cashscript/test/e2e/HodlVault.test.ts": {
+   "sha512": "71730b2877566bdefb100e86ffcb857fb6848ee25ab4fb393ceb85e917229097",
+   "size": 2437
+  },
+  "static/cashscript/test/e2e/Mecenas.test.ts": {
+   "sha512": "31defa829fb1bdd50b61c644c476def63e53ba074c14a1177fd0c616eb29f636",
+   "size": 2729
+  },
+  "static/cashscript/test/e2e/P2PKH.test.ts": {
+   "sha512": "091c223d34adc7a3ae29836d6dbc80c0f004f618c1992195c19a09762e2bd8c2",
+   "size": 6304
+  },
+  "static/cashscript/test/e2e/TransferWithTimeout.test.ts": {
+   "sha512": "3f3e7c3a16145471614f24689084f1f5e7cc32180453a881ef0220c0dad9e61c",
+   "size": 3726
+  },
+  "static/cashscript/test/e2e/misc.test.ts": {
+   "sha512": "cf0d68296cd87b62e11adfd3c0337a131a484674650f285a8a6b20398cf5a2f9",
+   "size": 1822
+  },
+  "static/cashscript/test/fixture/announcement.cash": {
+   "sha512": "492b13ceb88b2f8a82a2d7a072ec9223e949f4fe774142412f5dc78f441d4208",
+   "size": 1167
+  },
+  "static/cashscript/test/fixture/announcement.json": {
+   "sha512": "70c828d614164e0d877e67b9744cae63b82e3f106b0e8400554ceee5a8921d34",
+   "size": 2581
+  },
+  "static/cashscript/test/fixture/bounded_bytes.cash": {
+   "sha512": "a8a6d8729530fd312b1ee07aaad031aafbe43b49edbecc643c39d4823b5afa9f",
+   "size": 105
+  },
+  "static/cashscript/test/fixture/bounded_bytes.json": {
+   "sha512": "726de492802f9894e7c3355c670ce48f5ce98f6dc0757f8847a97d43dce49900",
+   "size": 587
+  },
+  "static/cashscript/test/fixture/hodl_vault.cash": {
+   "sha512": "c9462e0b8a46d5ccfc982fc006a12fc4316599c85f104aa86bfdf8993883d552",
+   "size": 1234
+  },
+  "static/cashscript/test/fixture/hodl_vault.json": {
+   "sha512": "536502a24e4e17bd3a7ccb85a558c88a48daa3b5bc6b5cfe2c730d3da8d568ed",
+   "size": 2349
+  },
+  "static/cashscript/test/fixture/mecenas.cash": {
+   "sha512": "98ef5f7b4d125de3b042b2b42a3485f7e49100044962a36f17b9a5f757065af0",
+   "size": 1262
+  },
+  "static/cashscript/test/fixture/mecenas.json": {
+   "sha512": "9c28227a493754aee9501ffe5cabe15ed61fee1890479ffaf2fb555d5664af15",
+   "size": 3158
+  },
+  "static/cashscript/test/fixture/p2palindrome.cash": {
+   "sha512": "1aee4f56aff3014895c373b77bc7a9520947eec1fd9c91c0c6c22e180c812a1a",
+   "size": 154
+  },
+  "static/cashscript/test/fixture/p2palindrome.json": {
+   "sha512": "0affadd4d79dd2a13ac5f958c064e15227870dd1d36ee3c74feb38c789ea7270",
+   "size": 578
+  },
+  "static/cashscript/test/fixture/p2pkh-invalid.cash": {
+   "sha512": "7a536556c12100e89d7e32ebd4e6e8ad0386dd8b47ff4080a75a74c0a5eb176e",
+   "size": 207
+  },
+  "static/cashscript/test/fixture/p2pkh-invalid.json": {
+   "sha512": "310b3815212824abfc43ec261bd0b98e90a563b9a438cf6bccee247467cb6cca",
+   "size": 953
+  },
+  "static/cashscript/test/fixture/p2pkh.cash": {
+   "sha512": "77df2a1eec81e44717ab88b0b56d5e79621b4fbf61feb53a9702c351546f34a8",
+   "size": 209
+  },
+  "static/cashscript/test/fixture/p2pkh.json": {
+   "sha512": "b4e43f1cddcb3fdfb978844d6821e0533e8b4eb95bec5f34d233b29beae828b7",
+   "size": 760
+  },
+  "static/cashscript/test/fixture/simple_covenant.cash": {
+   "sha512": "d834684c8b0e624178bd8868b04b3efc027bda733ed1d0396f9906e91f51eb1e",
+   "size": 142
+  },
+  "static/cashscript/test/fixture/simple_covenant.json": {
+   "sha512": "7f200f316dc6324eb691009bc150f10ee8942cfc7906e485d7fa69aa3d83022b",
+   "size": 783
+  },
+  "static/cashscript/test/fixture/transfer_with_timeout.cash": {
+   "sha512": "fbb45dbd2fa2f4bc8f327c915d6365b312e7015746cf14cbaba6adeab8ca8bb6",
+   "size": 441
+  },
+  "static/cashscript/test/fixture/transfer_with_timeout.json": {
+   "sha512": "551c3788796bc66feaeb5e0ccfac3f568161e8d6ece3554d453af808c9f45247",
+   "size": 1424
+  },
+  "static/cashscript/test/fixture/update_fixtures.sh": {
+   "sha512": "951a5f9bb79242889a57813c0e05a1a11e3f107d7122fcdb71d187f0279910b0",
+   "size": 264
+  },
+  "static/cashscript/test/fixture/vars.ts": {
+   "sha512": "8e44f85a8b7c577dffa7bfa47a617fe03564ed8d6a9eb19e435c1c17295d0455",
+   "size": 1003
+  },
+  "static/cashscript/test/test-util.ts": {
+   "sha512": "01038249a4a1dec5a7ce6e7abda25b9882555637239d8d4647b9a9802d4a93e6",
+   "size": 776
+  },
+  "static/cashscript/test/test_examples.sh": {
+   "sha512": "23aed973c6d97743430313208c2023b285f13085787c72569d8d892d9db7d6c8",
+   "size": 312
+  },
+  "static/cashscript/test/util.test.ts": {
+   "sha512": "2b8d0625640f0e5b2d08d7c45d6c29da0bd208f5296d66e698392c7e26dd4b32",
+   "size": 3580
+  },
+  "static/cashscript/tsconfig.build.main.json": {
+   "sha512": "35fe385dc175f70c9d44ab9982a20d8297a6de4800b39b9d365971f0cd85c707",
+   "size": 182
+  },
+  "static/cashscript/tsconfig.build.module.json": {
+   "sha512": "aeece169e6b3b115f51a579bcd504b0dc55584c14420572d6688e314138f8c7a",
+   "size": 183
+  },
+  "static/cashscript/tsconfig.json": {
+   "sha512": "2abab26e0248348a1daa0b7765864b69612cb45b4cfb0111b060c15c47cff097",
+   "size": 104
+  }
+ },
+ "ignore": "",
+ "inner_path": "content.json",
+ "modified": 1610754843,
+ "postmessage_nonce_security": true,
+ "signers_sign": "G320fei1nHGu4POSXVLFT0Vv5rcrU4kftwTrpT7IFKd+KVysdSHP/nKgDaGjGs0bWTjDxWpTp7IgIo3CCfKObBk=",
+ "signs": {
+  "1NhH9uJcPgWR6TcYQWCCvGxfuFxnirVjxY": "G7ZLHrAWYMOhUJnPfxKDySR8lerEMNZNefmqLR5IacxbICdhQU+FoGyQE27bXaOetvbhsX35wby90lTxQbKD9H8="
+ },
+ "signs_required": 1,
+ "title": "my new site",
+ "translate": ["js/all.js"],
+ "zeronet_version": "0.7.1"
+}

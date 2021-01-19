@@ -1,0 +1,60 @@
+{
+  "name": "cashscript",
+  "version": "0.5.7",
+  "description": "Easily write and interact with Bitcoin Cash contracts",
+  "keywords": [
+    "bitcoin cash",
+    "cashscript",
+    "sdk",
+    "smart contracts"
+  ],
+  "homepage": "https://cashscript.org",
+  "bugs": {
+    "url": "https://github.com/Bitcoin-com/cashscript/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bitcoin-com/cashscript.git"
+  },
+  "license": "MIT",
+  "author": "Rosco Kalis <roscokalis@gmail.com>",
+  "contributors": [
+    "Gabriel Cardona <gabriel@bitcoin.com>"
+  ],
+  "main": "dist/main/index",
+  "module": "dist/module/index",
+  "types": "dist/module/index",
+  "sideEffects": false,
+  "directories": {
+    "lib": "src",
+    "test": "test"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "rm -rf ./dist",
+    "compile": "npm run compile:main && npm run compile:module",
+    "compile:main": "tsc -p tsconfig.build.main.json",
+    "compile:module": "tsc -p tsconfig.build.module.json",
+    "lint": "eslint . --ext .ts --ignore-path ../../.eslintignore",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "test": "jest --config=../../jest.config.js packages/cashscript"
+  },
+  "dependencies": {
+    "@bitauth/libauth": "^1.17.2",
+    "bip68": "^1.0.4",
+    "cashc": "^0.5.7",
+    "delay": "^4.3.0",
+    "electrum-cash": "^2.0.4",
+    "hash.js": "^1.1.7"
+  },
+  "devDependencies": {
+    "@psf/bch-js": "^3.5.3",
+    "bignumber.js": "^9.0.0",
+    "bitbox-sdk": "^8.8.0",
+    "eslint": "^6.6.0",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.1.0",
+    "typescript": "3.7.5"
+  }
+}

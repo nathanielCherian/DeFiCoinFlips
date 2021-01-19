@@ -1,0 +1,17 @@
+.row{
+    margin: 0;
+}
+
+
+.title{
+    padding: 5%;
+    text-align: center;
+}
+
+h1{
+    font-size: 5em;
+}
+
+h2{
+    text-align: center;
+}

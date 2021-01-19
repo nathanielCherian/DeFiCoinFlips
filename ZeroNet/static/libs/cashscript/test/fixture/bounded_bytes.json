@@ -1,0 +1,27 @@
+{
+  "contractName": "BoundedBytes",
+  "constructorInputs": [],
+  "abi": [
+    {
+      "name": "spend",
+      "covenant": false,
+      "inputs": [
+        {
+          "name": "b",
+          "type": "bytes4"
+        },
+        {
+          "name": "i",
+          "type": "int"
+        }
+      ]
+    }
+  ],
+  "bytecode": "OP_SWAP OP_4 OP_NUM2BIN OP_EQUAL",
+  "source": "contract BoundedBytes() {\n    function spend(bytes4 b, int i) {\n        require(b == bytes4(i));\n    }\n}\n",
+  "compiler": {
+    "name": "cashc",
+    "version": "0.4.3"
+  },
+  "updatedAt": "2020-08-07T09:57:03.099Z"
+}
