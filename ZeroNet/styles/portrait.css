@@ -1,0 +1,199 @@
+.content{
+    color: white;
+    font-family: 'Merriweather', serif;
+}
+
+.content{
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.title{
+    text-align: center;
+    font-size: 10em;
+}
+
+
+.fade-in{
+    animation: 2s ease-out 0s 1 fadeIn;
+}
+
+
+.logo{
+    text-align: center;
+}
+
+.logo h1{
+    display: none;
+}
+
+.logo img{
+    width: 10em;
+    position: fixed;
+    top: 2%;
+    left: 2%;
+}
+
+
+
+
+
+.services{
+    margin-top: 40%;
+    font-size: 5em;
+    text-align: center;
+}
+
+
+.service{
+    margin-top: 5%;
+    color: white;
+    text-decoration: none;
+    transition: 1s;
+}
+
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+
+    }
+    60% {
+        transform: translateX(0);
+        opacity: 1;
+
+    }
+}
+.s1{
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+
+@keyframes slideInFromLeft2 {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+
+    }
+    80% {
+        transform: translateX(0);
+        opacity: 1;
+
+    }
+}
+
+.s2{
+    animation: 1s ease-out 0s 1 slideInFromLeft2;
+}
+
+@keyframes slideInFromLeft3 {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+
+    }
+}
+
+.s3{
+    animation: 1s ease-out 0s 1 slideInFromLeft3;
+}
+
+.service:hover{
+    transform: translateX(100px);
+}
+
+
+@keyframes bounceArrow {
+    0% {
+        transform: translateY(0);
+
+    }
+    50% {
+        transform: translateY(30px);
+
+    }
+    100% {
+        transform: translateY(0);
+
+    }
+}
+
+.scroll-arrow{
+    text-align: center;
+    padding-top: 2%;
+    font-size: 5em;
+    animation: 1s ease-in-out 0s infinite bounceArrow;
+
+}
+
+
+.request{
+    color: white;
+    font-family: 'Merriweather', serif;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding-top: 2%;
+    padding-right: 3%;
+    font-size: 1.4em;
+    display: none;
+    
+}
+
+.contact{
+    color: white;
+    font-family: 'Merriweather', serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    padding-top: 2%;
+    padding-left: 3%;
+    font-size: 1.4em;
+    display: none;
+}
+
+.contact h2{
+    font-size: 1.25em;
+}
+
+.about{
+    color: white;
+    font-family: 'Merriweather', serif;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 35%;
+    padding-top: 4%;
+    padding-right: 5%;
+    display: none;
+    z-index: 1010;
+    text-align: center;
+}
+
+.para{
+    font-size: 1.5em;
+    margin-top: 5%;
+}

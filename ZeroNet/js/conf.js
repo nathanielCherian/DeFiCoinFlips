@@ -23,4 +23,4 @@ class Page extends ZeroFrame {
 			this.log("Unknown incoming message:", cmd)
 	}
 }
-page = new Page()
+let page = new Page()

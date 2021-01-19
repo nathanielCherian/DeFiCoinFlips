@@ -1,0 +1,234 @@
+.content{
+    color: white;
+    font-family: 'Merriweather', serif;
+}
+
+.content{
+    top: 5%;
+    left: 5%;
+    position: fixed;
+    z-index: 100;
+}
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.title{
+    text-align: center;
+    font-size: 5em;
+}
+
+
+.fade-in{
+    animation: 2s ease-out 0s 1 fadeIn;
+}
+
+
+.logo{
+    text-align: center;
+    margin-top: -10%;
+}
+
+.logo img{
+    width: 7em;
+}
+
+
+
+.services{
+    margin-top: 30%;
+    font-size: 2em;
+    text-align: center;
+}
+
+
+.service{
+    margin-top: 20%;
+    color: white;
+    text-decoration: none;
+    transition: 1s;
+}
+
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+
+    }
+    60% {
+        transform: translateX(0);
+        opacity: 1;
+
+    }
+}
+.s1{
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+
+@keyframes slideInFromLeft2 {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+
+    }
+    80% {
+        transform: translateX(0);
+        opacity: 1;
+
+    }
+}
+
+.s2{
+    animation: 1s ease-out 0s 1 slideInFromLeft2;
+}
+
+@keyframes slideInFromLeft3 {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+
+    }
+}
+
+.s3{
+    animation: 1s ease-out 0s 1 slideInFromLeft3;
+}
+
+.service:hover{
+    transform: translateX(25px);
+}
+
+
+@keyframes bounceArrow {
+    0% {
+        transform: translateY(0);
+
+    }
+    50% {
+        transform: translateY(30px);
+
+    }
+    100% {
+        transform: translateY(0);
+
+    }
+}
+
+.scroll-arrow{
+    text-align: center;
+    padding-top: 15%;
+    font-size: 3em;
+    animation: 1s ease-in-out 0s infinite bounceArrow;
+
+}
+
+
+.request{
+    cursor: pointer;
+    color: white;
+    font-family: 'Merriweather', serif;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding-top: 5%;
+    padding-right: 3%;
+    font-size: 1.4em;
+}
+
+.request-text{
+    transition: 1s;
+}
+.request-text:hover{
+    transform: translateY(-25px);
+}
+
+
+.request-form{
+    display: none;
+}
+
+.request-form input{
+    padding: 3%;
+    margin-top: 2%;
+}
+
+.request-form textarea{
+    padding: 3%;
+    margin-top: 2%;
+    padding-bottom: 10%;
+    width: 100%;
+    resize: vertical;
+}
+
+.input-name{
+    width: 100%;
+}
+
+.input-phone{
+    width: 49%;
+}
+
+.input-email{
+    width: 49%;
+}
+
+.input-submit{
+    text-align: center;
+    width: 50%;
+}
+
+
+
+
+.contact{
+    color: white;
+    font-family: 'Merriweather', serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    padding-top: 3%;
+    padding-left: 3%;
+    font-size: 1.4em;
+    display: none;
+}
+
+.contact h2{
+    font-size: 1.25em;
+}
+
+.about{
+    color: white;
+    font-family: 'Merriweather', serif;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 35%;
+    padding-top: 4%;
+    padding-right: 5%;
+    display: none;
+    z-index: 1010;
+    text-align: center;
+}
+
+.para{
+    font-size: 1.5em;
+    margin-top: 5%;
+}
