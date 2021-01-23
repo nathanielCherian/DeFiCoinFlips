@@ -106,7 +106,7 @@
             const txData = await wallet.send([
                 [cashaddr, sats, 'sat'],
             ]);
-            console.log(txData.txId);
+            console.log(txData.txI);
 
             $(".alert").text("transaction complete!");
             $('.alert').fadeIn(1000).delay(1000).fadeOut(1000)
@@ -116,6 +116,14 @@
         }
 
 
+        async function updateData(){
+            console.log(await wallet.getBalance('sat'))
+            $("#balance").text("balance: " + await wallet.getBalance('sat') + " SAT");
+            $("#myCashaddr").text("cashaddr: " + wallet.cashaddr);
+            waitForBalance();
+        }
+
+        
         async function main(){
 
             wallet = await TestNetWallet.named('user:1234');
@@ -123,21 +131,21 @@
             console.log(wallet)
 
 
-            async function updateData(){
-                console.log(await wallet.getBalance('sat'))
-                $("#balance").text("balance: " + await wallet.getBalance('sat') + " SAT");
-                $("#myCashaddr").text("cashaddr: " + wallet.cashaddr);
-            }
-
             updateData();
-
-
-            
 
         }
 
 
         main();
+
+
+        async function waitForBalance(){
+            console.log("waiting...")
+            let balance = await wallet.waitForBalance(100, 'sat');
+            console.log("await balance: ", balance)
+        }
+
+        
 
 
     </script>
