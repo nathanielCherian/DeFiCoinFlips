@@ -1,0 +1,152 @@
+<html>
+
+    <head>
+        <title>Play</title> 
+        <script src="https://cdn.mainnet.cash/mainnet-0.2.12.js"
+        integrity="sha384-CmrJoR+dx6a4cw3opshz5ssWp587n6VUyYD005vlGq2+UKgtfNhOil/wLgydN5E3"
+        crossorigin="anonymous"></script>
+
+        <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://unpkg.com/bchaddrjs-slp@0.2.12/dist/bchaddrjs-slp-0.2.12.min.js" integrity="" crossorigin="anonymous"></script>
+
+    </head>
+
+    <body>
+
+        <div class="alert alert-success" role="alert">
+            This is a success alert—check it out!
+        </div>
+
+        <h1>Welcome to coinflip!</h1>
+
+
+        <div class="row">
+
+
+            <div class="col-5">
+                <div class="row">
+                    <div class="col-6">
+                        <p style="text-align: center;">
+                            <img src="https://cdn.mainnet.cash/wait.svg" style="width: 15em;" id="deposit">
+                        </p>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="col-6">
+                        <p style="text-align: center;" id="myCashaddr">cashaddr: </p>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="col-6">
+                        <p style="text-align: center;" id="balance">Balance: SAT</p>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-6" style="text-align: center;">
+                        <input type="text" placeholder="bchtest:" id="toCashaddr">
+                        <input type="number" placeholder="100" id="toSats">
+                        <button id="send">Send!</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+        
+    </body>
+
+
+    <script type="module">
+
+        var wallet = null;
+
+
+        $("#send").click((event)=>{
+
+            const addr = $('#toCashaddr').val();
+            $('#toCashaddr').val("");
+            const sats = $('#toSats').val();
+            $('#toSats').val("");
+
+            console.log(addr, sats, verifyAddress(addr))
+            if(verifyAddress(addr)){
+                sendCoin(addr, sats)
+            }
+
+        });
+
+
+        function verifyAddress(cashaddr){
+            if(bchaddr.isValidAddress(cashaddr)){
+                return true;
+            }else{
+                return false;
+            }
+
+        }
+
+        async function sendCoin(cashaddr, sats){
+
+            console.log(wallet)
+            const txData = await wallet.send([
+                [cashaddr, sats, 'sat'],
+            ]);
+            console.log(txData.txId);
+
+            $(".alert").text("transaction complete!");
+            $('.alert').fadeIn(1000).delay(1000).fadeOut(1000)
+
+            updateData();
+
+        }
+
+
+        async function main(){
+
+            wallet = await TestNetWallet.named('user:1234');
+            document.querySelector('#deposit').src = wallet.getDepositQr().src;
+            console.log(wallet)
+
+
+            async function updateData(){
+                console.log(await wallet.getBalance('sat'))
+                $("#balance").text("balance: " + await wallet.getBalance('sat') + " SAT");
+                $("#myCashaddr").text("cashaddr: " + wallet.cashaddr);
+            }
+
+            updateData();
+
+
+            
+
+        }
+
+
+        main();
+
+
+    </script>
+
+
+    <style>
+        .alert{
+            display: none;
+        }
+    </style>
+
+</html>
