@@ -2,13 +2,38 @@
 
     <head>
         <title><%= title %></title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/bchaddrjs-slp@0.2.12/dist/bchaddrjs-slp-0.2.12.min.js" integrity="" crossorigin="anonymous"></script>
+
     </head>
 
     <body>
 
-        <h1>Test</h1>
+        <h1><%= title %></h1>
 
-        <button onclick="sendMessage()">Send Message</button>
+
+
+        <form id="wager-form" onsubmit="return false">
+
+            <div>
+                <input type="radio" id="black" name="color" checked>
+                <label for="black">BLACK</label>
+            </div>
+
+            <div>
+                <input type="radio" id="red" name="color">
+                <label for="red">RED</label>
+            </div>
+
+
+            <input type="number" name="wager" placeholder="1000 SAT" required> 
+            <input type="text" name="addr" placeholder="bchtest:abcdefg" required> 
+            <input type="submit" value="create wager">
+        </form>
+
+
 
     </body>
 
@@ -28,9 +53,51 @@
             console.log('Message from server ', event.data);
         });
 
-        const sendMessage = () => {
-            socket.send('Hello From Client!');
-            console.log("sent!")
+        function sendMessage(msg){
+            socket.send(msg);
+        }
+
+
+        $("#create-wager").click((event) => {
+            sendMessage("wager created");
+        });
+
+
+
+
+        $('#wager-form').submit(function() {
+            // get all the inputs into an array.
+            var $inputs = $('#wager-form :input');
+            
+            var values = {};
+            values["color"] = $('#wager-form :input[name="color"]:checked').attr("id");
+            values["wager"]  = $('#wager-form :input[name="wager"]').val();
+            values["addr"]  = $('#wager-form :input[name="addr"]').val();
+
+            if(!verifyAddress(values['addr'])){
+                console.log("ADDRESS NOT VALID!")
+                return;
+            }
+
+            jsonMsg = {
+                "code":"NEW_WAGER",
+                "data":values,
+            }
+
+            const valString = JSON.stringify(jsonMsg);
+            console.log(valString);
+            sendMessage(valString);
+
+        });
+
+
+        
+        function verifyAddress(cashaddr){
+            if(bchaddr.isValidAddress(cashaddr)){
+                return true;
+            }else{
+                return false;
+            }
         }
 
     </script>
