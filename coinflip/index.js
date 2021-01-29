@@ -39,7 +39,6 @@ wss.on('connection', function connection(ws){
             case "NEW_WAGER":
                 const lobby = new Lobby(jsonMsg.data, ws);
                 gameData["WAGERS"].push(lobby);
-                broadcastToAll(lobby.toJSON());
                 break;
             default:
                 break;

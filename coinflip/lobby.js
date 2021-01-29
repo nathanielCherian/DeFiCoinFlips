@@ -13,7 +13,6 @@ class Lobby{
             "ws":ws
         }
 
-
         this.open = true;
     }   
 
@@ -35,7 +34,7 @@ class Lobby{
     }
 
 
-    sendMsg(msg){
+    broadcastMessage(msg){
         for(const key of Object.keys(this.data)){
             const ws = this.data[key].ws;
             ws.send("hello there!");
@@ -47,7 +46,6 @@ class Lobby{
     toJSON(){
         console.log(this.wallet)
         const msg = {
-            wallet:this.wallet.cashaddr,
             open:this.open,
             wager:this.wager,
             colors:Object.keys(this.data)
@@ -58,6 +56,8 @@ class Lobby{
 
     async _init() {
         this.wallet = await Mainnet.TestNetWallet.newRandom();
+        console.log("addr: ", this.wallet.cashaddr)
+
     }
 
 }
