@@ -3,6 +3,8 @@
     "version": "0.0.1",
     "description": "my first socket.io app",
     "dependencies": {
+        "bitbox-sdk": "^8.11.2",
+        "cashscript": "^0.5.7",
         "express": "^4.17.1",
         "socket.io": "^2.2.0"
     }
