@@ -38,6 +38,7 @@ function createContract(pK1, pK2, opK){
     const artifact = CashCompiler.compileString(source);
 
     const contract = new Contract(artifact, [pK1, pK2, opK], provider)
+    console.log(contract);
 
     return contract;
 }

@@ -60,8 +60,9 @@ io.on("connection", socket => {
 
 
     function compileContract(data){
-        const c = createContract(data.player1.pK, data.player2.pK, bitbox.ECPair.toPublicKey(oraclePair))
-        io.to(data.room).emit("add-contract", {contract:c});
+        console.log(data);
+        //const c = createContract(data.player1.pK, data.player2.pK, bitbox.ECPair.toPublicKey(oraclePair))
+        io.to(data.room).emit("add-contract", {contractData:{p1K:data.player1.pK, p2K:data.player2.pK, opK:bitbox.ECPair.toPublicKey(oraclePair)}});
     }
 
     socket.on('player-ready', (data)=>{
@@ -80,10 +81,10 @@ io.on("connection", socket => {
     function startFlip(data){
         const ro = new RandomOracle(oraclePair);
         const message = ro.createMessage(100,1);
-        const sm = ro.signMessage(message);
+        const signature = ro.signMessage(message);
 
         console.log('start flip');
-        io.to(data.room).emit("start-flip", {outcome:1, signedMessage:sm});
+        io.to(data.room).emit("start-flip", {outcome:1, signature:signature, message:message});
     }
 
     //end room specific 

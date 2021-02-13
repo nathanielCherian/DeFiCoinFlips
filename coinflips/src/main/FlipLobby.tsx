@@ -9,13 +9,15 @@ interface PropInterface {
 
 interface StateInterface{
     seed:string,
-    pair?:ECPair
+    pair?:any
     pK?:Buffer
     wagerData?:WagerData,
     contract?:Contract
     ready:boolean,
     outcome?:boolean
-    returnAddress?:string
+    message?:any
+    signature?:any
+    returnAddress:string
 }
 
 export default class FlipLobby extends React.Component{
@@ -24,6 +26,7 @@ export default class FlipLobby extends React.Component{
     state:StateInterface = {
         seed:"",
         ready:false,
+        returnAddress:""
     };
 
     constructor(props:any){
@@ -44,14 +47,61 @@ export default class FlipLobby extends React.Component{
         });
 
         socket.on('add-contract', (data:any)=>{
-            this.setState({contract:data.contract})
-            console.log(data);
+            //this.setState({contract:data.contract})
+            this.compileContract(data.contractData);
         });
 
         socket.on('start-flip', (data:any)=>{
             this.flipOutcome(data)
         })
     }
+
+    compileContract = (data:any) => {
+        const source = `
+        pragma cashscript ^0.5.6;
+    
+        contract SendToWinner(pubkey player1Pk, pubkey player2Pk, pubkey oraclePk) {
+    
+            function collect(sig playerSig, datasig oracleSig, bytes oracleMessage){
+    
+                require(checkDataSig(oracleSig, oracleMessage, oraclePk));
+    
+                int blockHeight = int(oracleMessage.split(4)[0]);
+                int randomNumber = int(oracleMessage.split(4)[1]);
+    
+                require(tx.time >= blockHeight);
+                
+                //int playerNum = 0;
+    
+                if(randomNumber == 0){
+                    require(checkSig(playerSig, player1Pk));
+                }else if(randomNumber == 1){
+                    require(checkSig(playerSig, player2Pk));
+                }else{
+                    require(false);
+                }
+            }
+    
+        }
+        `
+        const provider = new ElectrumNetworkProvider('testnet')
+        const artifact = CashCompiler.compileString(source);
+    
+        console.log(this.toBuffer(data.p1K))
+
+        const contract = new Contract(artifact, [this.toBuffer(data.p1K), this.toBuffer(data.p2K), this.toBuffer(data.opK)], provider);
+        this.setState({contract});
+    }
+
+    toBuffer(ab:any) {
+        var buf = Buffer.alloc(ab.byteLength);
+        var view = new Uint8Array(ab);
+        for (var i = 0; i < buf.length; ++i) {
+            buf[i] = view[i];
+        }
+        return buf;
+    }
+
 
     flipOutcome = (data:any) => {
         const outcome = data.outcome;
@@ -73,7 +123,7 @@ export default class FlipLobby extends React.Component{
                 oc = false;
             }
         }
-        this.setState({outcome:oc})
+        this.setState({outcome:oc, message:data.message, signature:data.signature})
     };
 
 
@@ -106,18 +156,16 @@ export default class FlipLobby extends React.Component{
         this.setState({ready:true})
     }
 
-    async claimCoin(){
-        const addr = this.state.returnAddress;
-        const contract = this.state.contract as Contract;
-
-        /*
+    async claimCoin(state:any){
+        const contract = state.contract as Contract;
+        
+        console.log(state)
         const txDetails = await contract.functions
-            .collect(new SignatureTemplate(this.state.pair), this.state., message)
-            .to(this.state.returnAddress || "", 500)
-            .withHardcodedFee(100)
+            .collect(new SignatureTemplate(state.pair), this.toBuffer(state.signature), this.toBuffer(state.message))
+            .to(state.returnAddress || "", 400)
             .send();
         console.log(txDetails.hex);
-        console.log('https://explorer.bitcoin.com/tbch/tx/'+txDetails.txid);*/
+        console.log('https://explorer.bitcoin.com/tbch/tx/'+txDetails.txid);
     }
 
 
@@ -144,8 +192,8 @@ export default class FlipLobby extends React.Component{
                 {this.state.outcome == true && <h2>You Win!</h2>}
                 {this.state.outcome == false && <h2>You Lose!</h2>}
                 {this.state.outcome != null && <div>
-                    <input type="text" value={this.state.returnAddress}/>
-                    <button onClick={this.claimCoin}>Claim Your Coin!</button>
+                    <input type="text" value={this.state.returnAddress} onChange={(event)=>{this.setState({returnAddress:event.target.value})}}/>
+                    <button onClick={()=>{this.claimCoin(this.state)}}>Claim Your Coin!</button>
                 </div>}
 
             </div>
